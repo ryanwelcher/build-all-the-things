@@ -30,7 +30,7 @@ The default location for your built files is the `build` directory but you can c
 ```
 </details>
 <details>
-<summary>Copy sourcePHP files into your build directory</summary>
+<summary>Copy source PHP files into your build directory</summary>
 
 You can ensure all PHP files are copied into your build dir with the `--webpack-copy-php` flag:
 
@@ -55,8 +55,29 @@ You can target files directory by passing one or more filenames to `wp-scripts` 
 "start": "wp-scripts start file-one.js file-two.js",
 "build": "wp-scripts build file-one.js file-two.js",
 ```
-</details>
 
-## Developer Hours
+## Fast Refresh
+
+`wp-scripts` supports "Fast Refresh" using the `--hot` flag. When in this mode, the page will automatically reload when changes are made to the source files.
+
+In order to use `--hot` mode, you will need the latest version of Gutenberg installs and have the the `SCRIPT_DEBUG` constant set to `true` in the `wp-config.php` file of your development environment.
+
+### Custom development urls
+
+Under the hood, `wp-scripts` is using `devServer` with the `allowedHosts` option set to `auto`. This ensures that if your local environment is using `localhost` as it's URL everything will connect as expected.
+
+If you're using a URL that is not `localhost`, you can get it working by customizing the configuration in webpack:
+
+```js
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+
+module.exports = {
+	...defaultConfig,
+	devServer: {
+		...defaultConfig.devServer,
+		allowedHosts: 'all', // This can also be set to a url i.e "devsite.dev'
+	},
+};
+```
 
 
