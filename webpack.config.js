@@ -5,8 +5,11 @@ const defaultConfig = require("@wordpress/scripts/config/webpack.config");
 module.exports = {
 	...defaultConfig,
 	entry: {
+		// This will dynamically discover any blocks located in the `blocks` directory.
 		...defaultConfig.entry(),
+		// These are discreet entries that will be built separately.
 		variations: "./js/variations.js",
 		slots: "./js/slots.js",
+		"admin-screen": './js/admins.js'
 	},
 };
