@@ -1,2 +1,6 @@
-# build-all-the-things
-Template for a plugin with a single build process for custom blocks, variations, slots and more
+# Build all the things!
+
+Because customizing webpack is hard!
+https://giphy.com/embed/23BST5FQOc8k8
+
+## Developer Hours
