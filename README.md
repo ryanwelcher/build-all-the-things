@@ -55,6 +55,8 @@ You can target files directory by passing one or more filenames to `wp-scripts` 
 "start": "wp-scripts start file-one.js file-two.js",
 "build": "wp-scripts build file-one.js file-two.js",
 ```
+</details>
+
 
 ## Fast Refresh
 
