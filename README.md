@@ -66,7 +66,7 @@ In order to use `--hot` mode, you will need the latest version of Gutenberg inst
 
 ### Custom development urls
 
-Under the hood, `wp-scripts` is using `devServer` with the `allowedHosts` option set to `auto`. This ensures that if your local environment is using `localhost` as it's URL everything will connect as expected.
+Under the hood, `wp-scripts` is using `devServer` with the `allowedHosts` option set to `auto`. This ensures that if your local environment is using `localhost` as its URL everything will connect as expected.
 
 If you're using a URL that is not `localhost`, you can get it working by customizing the configuration in webpack:
 
