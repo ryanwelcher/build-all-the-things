@@ -8,14 +8,52 @@ You need to change something in your WordPress projects build process. So let's 
 
 The `@wordpress/scripts` package provides all kinds of options that provide ways to customize your build setup without having to create a custom configuration.
 
-## Common Examples
+## No custom configuration needed
 <details>
 <summary>Customize the location of source files</summary>
-The default location for your sources files is the `src` directory but there are times when you may want to change that. This can be done with the `--webpack-src-dir` flag:
+
+The default location for your sources files is the `src` directory but you can change the location with the `--webpack-src-dir` flag:
 
 ```json
 "start": "wp-scripts start --webpack-src-dir blocks",
 "build": "wp-scripts build --webpack-src-dir blocks",
+```
+</details>
+<details>
+<summary>Customize the location of the built files</summary>
+
+The default location for your built files is the `build` directory but you can change the location with the `--output-path` flag:
+
+```json
+"start": "wp-scripts start --output-path dist",
+"build": "wp-scripts build --output-path dist",
+```
+</details>
+<details>
+<summary>Copy sourcePHP files into your build directory</summary>
+
+You can ensure all PHP files are copied into your build dir with the `--webpack-copy-php` flag:
+
+```json
+"start": "wp-scripts start --webpack-copy-php",
+"build": "wp-scripts build --webpack-copy-php",
+```
+</details>
+<details>
+<summary>Target files to build</summary>
+
+You can target files directory by passing one or more filenames to `wp-scripts` that will be complied into a single file.
+
+## Single file
+```json
+"start": "wp-scripts start index.js",
+"build": "wp-scripts build index.js",
+```
+## Multiple files
+
+```json
+"start": "wp-scripts start file-one.js file-two.js",
+"build": "wp-scripts build file-one.js file-two.js",
 ```
 </details>
 
