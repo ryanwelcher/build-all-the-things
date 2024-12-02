@@ -62,6 +62,11 @@ You can target files directory by passing one or more filenames to `wp-scripts` 
 
 `wp-scripts` supports "Fast Refresh" using the `--hot` flag. When in this mode, the page will automatically reload when changes are made to the source files.
 
+
+```json
+"start" : "wp-scripts start --hot"
+```
+
 In order to use `--hot` mode, you will need the latest version of Gutenberg installs and have the the `SCRIPT_DEBUG` constant set to `true` in the `wp-config.php` file of your development environment.
 
 ### Custom development urls
