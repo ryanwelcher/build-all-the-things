@@ -21,6 +21,8 @@ module.exports = {
 		customScripts: {
 			'start:hot':
 				'wp-scripts start --hot --webpack-copy-php --webpack-src-dir=blocks',
+			'start:analyze':
+				'wp-scripts start --webpack-bundle-analyzer --webpack-copy-php --webpack-src-dir=blocks',
 			start: 'wp-scripts start --webpack-copy-php --webpack-src-dir=blocks',
 			build: 'wp-scripts build --webpack-copy-php --webpack-src-dir=blocks',
 			'create-block':
