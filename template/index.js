@@ -27,6 +27,8 @@ module.exports = {
 				'npx @wordpress/create-block ${npm_config_name} --target-dir blocks/${npm_config_name} --no-plugin',
 			'create-block:windows':
 				'npx @wordpress/create-block %npm_config_name% --target-dir blocks/%npm_config_name% --no-plugin',
+			postbuild: 'npm run build-blocks-manifest',
+			'build-blocks-manifest': 'wp-scripts build-blocks-manifest',
 		},
 	},
 	variants: {

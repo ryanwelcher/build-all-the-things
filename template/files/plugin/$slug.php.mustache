@@ -38,6 +38,12 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function {{namespaceSnakeCase}}_{{slugSnakeCase}}_block_init() {
+
+	wp_register_block_metadata_collection(
+        	__DIR__  . '/build/',
+        	__DIR__  . '/build/blocks-manifest.php'
+	);
+
 	register_block_type( __DIR__ . '/build/{{slug}}' );
 }
 add_action( 'init', '{{namespaceSnakeCase}}_{{slugSnakeCase}}_block_init' );
