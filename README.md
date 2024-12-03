@@ -10,24 +10,21 @@ The `@wordpress/scripts` package provides all kinds of options that provide ways
 
 ## Controlling where things are.
 
-| Flag  | What does it do? | Example |
-| ------------- | ------------- | ------------- |
-| `--webpack-src-dir`  | Customize the location of source files  | `"start": "wp-scripts start --webpack-src-dir blocks"`
-| `---output-path`  | Customize the location of the built files  | `"start": "wp-scripts start --output-path dist"`
-| `--webpack-copy-php`  | Copies source PHP files into your build directory | `"start": "wp-scripts start --webpack-copy-php"`
-| `--webpack-copy-php`  | Copies source PHP files into your build directory | `"start": "wp-scripts start --webpack-copy-php"`
-| None  | Target a single file to build | `"start": "wp-scripts start index.js"`
-| None  | Target multiple files to be combined | `"start": "wp-scripts start file-one.js file-two.js"`
-
+| Flag                 | What does it do?                                  | Example                                                |
+| -------------------- | ------------------------------------------------- | ------------------------------------------------------ |
+| `--webpack-src-dir`  | Customize the location of source files            | `"start": "wp-scripts start --webpack-src-dir blocks"` |
+| `---output-path`     | Customize the location of the built files         | `"start": "wp-scripts start --output-path dist"`       |
+| `--webpack-copy-php` | Copies source PHP files into your build directory | `"start": "wp-scripts start --webpack-copy-php"`       |
+| None                 | Target a single file to build                     | `"start": "wp-scripts start index.js"`                 |
+| None                 | Target multiple files to be combined              | `"start": "wp-scripts start file-one.js file-two.js"`  |
 
 ## Advanced webpack flags
 
-| Flag  | What does it do? 
-| ------------- | ------------- | 
-| `--webpack-bundle-analyzer`  | Enables visualization for the size of webpack output files with an interactive zoomable treemap - [npm reference](https://www.npmjs.com/package/webpack-bundle-analyzer)
-| `--webpack-devtool`  | Controls how source maps are generated  - [webpack reference](https://webpack.js.org/configuration/devtool/#devtool)
-| `--webpack-no-externals`  | Disables scripts' assets generation, and omits the list of default externals. Requires all packages to be installed to the project.
-
+| Flag                        | What does it do?                                                                                                                                                         |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `--webpack-bundle-analyzer` | Enables visualization for the size of webpack output files with an interactive zoomable treemap - [npm reference](https://www.npmjs.com/package/webpack-bundle-analyzer) |
+| `--webpack-devtool`         | Controls how source maps are generated - [webpack reference](https://webpack.js.org/configuration/devtool/#devtool)                                                      |
+| `--webpack-no-externals`    | Disables scripts' assets generation, and omits the list of default externals. Requires all packages to be installed to the project.                                      |
 
 ## Fast Refresh
 
