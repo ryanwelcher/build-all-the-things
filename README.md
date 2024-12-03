@@ -86,3 +86,5 @@ module.exports = {
 	},
 };
 ```
+
+For more information on how to use `wp-scripts`, refer to the [official documentation](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts).
