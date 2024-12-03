@@ -1,0 +1,27 @@
+{
+	"name": "@ryanwelcher/build-all-the-things",
+	"version": "1.0.0",
+	"description": "A template that sets up support for building multiple blocks and separate JavaScript to registers variations and slots",
+	"main": "index.js",
+	"author": {
+		"name": "Ryan Welcher",
+		"url": "https://ryanwelcher.com"
+	},
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"wordpress",
+		"create block",
+		"block template"
+	],
+	"homepage": "https://ryanwelcher.com/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ryanwelcher/build-all-the-things.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ryanwelcher/build-all-the-things/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
