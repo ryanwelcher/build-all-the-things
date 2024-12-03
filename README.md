@@ -9,6 +9,7 @@ You need to change something in your WordPress projects build process. So let's 
 The `@wordpress/scripts` package provides all kinds of options that provide ways to customize your build setup without having to create a custom configuration.
 
 ## No custom configuration needed
+
 <details>
 <summary>Customize the location of source files</summary>
 
@@ -18,6 +19,7 @@ The default location for your sources files is the `src` directory but you can c
 "start": "wp-scripts start --webpack-src-dir blocks",
 "build": "wp-scripts build --webpack-src-dir blocks",
 ```
+
 </details>
 <details>
 <summary>Customize the location of the built files</summary>
@@ -28,6 +30,7 @@ The default location for your built files is the `build` directory but you can c
 "start": "wp-scripts start --output-path dist",
 "build": "wp-scripts build --output-path dist",
 ```
+
 </details>
 <details>
 <summary>Copy source PHP files into your build directory</summary>
@@ -38,6 +41,7 @@ You can ensure all PHP files are copied into your build dir with the `--webpack-
 "start": "wp-scripts start --webpack-copy-php",
 "build": "wp-scripts build --webpack-copy-php",
 ```
+
 </details>
 <details>
 <summary>Target files to build</summary>
@@ -45,33 +49,36 @@ You can ensure all PHP files are copied into your build dir with the `--webpack-
 You can target files directory by passing one or more filenames to `wp-scripts` that will be complied into a single file.
 
 ## Single file
+
 ```json
 "start": "wp-scripts start index.js",
 "build": "wp-scripts build index.js",
 ```
+
 ## Multiple files
 
 ```json
 "start": "wp-scripts start file-one.js file-two.js",
 "build": "wp-scripts build file-one.js file-two.js",
 ```
-</details>
 
+</details>
 
 ## Fast Refresh
 
 `wp-scripts` supports "Fast Refresh" using the `--hot` flag. When in this mode, the page will automatically reload when changes are made to the source files.
 
-
 ```json
 "start" : "wp-scripts start --hot"
 ```
 
-In order to use `--hot` mode, you will need the latest version of Gutenberg installs and have the the `SCRIPT_DEBUG` constant set to `true` in the `wp-config.php` file of your development environment.
+In order to use `--hot` mode, you will need the latest version of Gutenberg installs and have the `SCRIPT_DEBUG` constant set to `true` in the `wp-config.php` file of your development environment.
 
 ### Custom development urls
 
-Under the hood, `wp-scripts` is using `devServer` with the `allowedHosts` option set to `auto`. This ensures that if your local environment is using `localhost` as its URL everything will connect as expected.
+Under the hood, `wp-scripts` is using [`devServer`](https://webpack.js.org/configuration/dev-server/) with the [`allowedHosts`](https://webpack.js.org/configuration/dev-server/#devserverallowedhosts) option set to `auto`.
+
+This ensures that if your local environment is using `localhost` as its URL everything will connect as expected.
 
 If you're using a URL that is not `localhost`, you can get it working by customizing the configuration in webpack:
 
@@ -82,9 +89,7 @@ module.exports = {
 	...defaultConfig,
 	devServer: {
 		...defaultConfig.devServer,
-		allowedHosts: 'all', // This can also be set to a url i.e "devsite.dev'
+		allowedHosts: 'all', // This can also be set to a url i.e "dev-site.dev'
 	},
 };
 ```
-
-

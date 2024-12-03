@@ -1,0 +1,22 @@
+// Import the original config from the @wordpress/scripts package.
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+
+// Add any a new entry point by extending the webpack config.
+module.exports = {
+	...defaultConfig,
+	entry: {
+		// This will dynamically discover any blocks located in the `blocks` directory.
+		...defaultConfig.entry(),
+		// These are discreet entries that will be built separately.
+		variations: './js/variations.js',
+		slots: './js/slots.js',
+		// Add more custom entries as needed i.e 'admin-screen': './js/admins.js',
+	},
+	/*
+	// Uncomment if your dev url isn't localhost and you want to use Fast Refresh
+	devServer: {
+		...defaultConfig.devServer,
+		allowedHosts: 'all', // This can also be set to a url i.e "dev-site.dev'
+	},
+	*/
+};

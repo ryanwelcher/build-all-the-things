@@ -1,0 +1,73 @@
+<?php
+/**
+ * Plugin Name:       {{title}}
+{{#pluginURI}}
+ * Plugin URI:        {{{pluginURI}}}
+{{/pluginURI}}
+{{#description}}
+ * Description:       {{description}}
+{{/description}}
+ * Requires at least: 6.7
+ * Requires PHP:      7.4
+ * Version:           {{version}}
+{{#author}}
+ * Author:            {{author}}
+{{/author}}
+{{#license}}
+ * License:           {{license}}
+{{/license}}
+{{#licenseURI}}
+ * License URI:       {{{licenseURI}}}
+{{/licenseURI}}
+ * Text Domain:       {{textdomain}}
+{{#domainPath}}
+ * Domain Path:       {{{domainPath}}}
+{{/domainPath}}
+{{#updateURI}}
+ * Update URI:        {{{updateURI}}}
+{{/updateURI}}
+ *
+ * @package           {{namespace}}
+ */
+
+/**
+ * Registers the block using the metadata loaded from the `block.json` file.
+ * Behind the scenes, it registers also all assets so they can be enqueued
+ * through the block editor in the corresponding context.
+ *
+ * @see https://developer.wordpress.org/reference/functions/register_block_type/
+ */
+function {{namespaceSnakeCase}}_{{slugSnakeCase}}_block_init() {
+	register_block_type( __DIR__ . '/build/{{slug}}' );
+}
+add_action( 'init', '{{namespaceSnakeCase}}_{{slugSnakeCase}}_block_init' );
+
+add_action(
+	'enqueue_block_editor_assets',
+	function() {
+		$variations_file = plugin_dir_path( __FILE__ ) . '/build/variations.asset.php';
+
+		if ( file_exists( $variations_file ) ) {
+			$assets = include $variations_file;
+			wp_enqueue_script(
+				'{{slug}}-variations',
+				plugin_dir_url( __FILE__ ) . '/build/variations.js',
+				$assets['dependencies'],
+				$assets['version'],
+				true
+			);
+		}
+		$slots_file = plugin_dir_path( __FILE__ ) . '/build/slots.asset.php';
+
+		if ( file_exists( $slots_file ) ) {
+			$assets = include $slots_file;
+			wp_enqueue_script(
+				'{{slug}}-slots',
+				plugin_dir_url( __FILE__ ) . '/build/slots.js',
+				$assets['dependencies'],
+				$assets['version'],
+				true
+			);
+		}
+	}
+);

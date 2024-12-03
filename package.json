@@ -13,9 +13,11 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"create-block": "npx @wordpress/create-block ${npm_config_name} --target-dir blocks/${npm_config_name} --no-plugin"
+		"create-block": "npx @wordpress/create-block ${npm_config_name} --target-dir blocks/${npm_config_name} --no-plugin",
+		"create-block:windows": "npx @wordpress/create-block %npm_config_name% --target-dir blocks/%npm_config_name% --no-plugin"
 	},
 	"devDependencies": {
+		"@wordpress/prettier-config": "^4.13.0",
 		"@wordpress/scripts": "^30.6.0"
 	},
 	"prettier": "@wordpress/prettier-config"
