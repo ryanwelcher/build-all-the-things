@@ -13,7 +13,7 @@ It's possible to target files directly, just pass on or more files to `wp-script
 ### Single file
 
 ```json
-"start": "wp-scripts start index.js
+"start": "wp-scripts start index.js"
 ```
 
 ### Multiple files

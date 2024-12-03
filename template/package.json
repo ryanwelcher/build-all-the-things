@@ -1,6 +1,6 @@
 {
 	"name": "@ryanwelcher/build-all-the-things",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A template that sets up support for building multiple blocks and separate JavaScript to registers variations and slots",
 	"main": "index.js",
 	"author": {
