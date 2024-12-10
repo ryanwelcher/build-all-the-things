@@ -39,7 +39,7 @@ The `@wordpress/scripts` package provides all kinds of options that provide ways
 
 ## Fast Refresh
 
-In order to use `--hot` mode, you will need the latest version of Gutenberg installs and have the `SCRIPT_DEBUG` constant set to `true` in the `wp-config.php` file of your development environment.
+In order to use `--hot` mode, you will need WordPress 6.6 or higher or the latest version of Gutenberg installed and have the `SCRIPT_DEBUG` constant set to `true` in the `wp-config.php` file of your development environment.
 
 ### Custom development urls
 
